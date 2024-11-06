@@ -1,0 +1,50 @@
+ABC431;Electronica;Bodega1;iPhone 11;Telefono inteligente potente;349.99;559.98;20
+ABC782;Electronica;Bodega2;Samsung Galaxy S20;Celular de alta calidad;299.99;499.98;15
+ABC154;Electronica;Bodega3;Laptop Dell XPS 13;Laptop ultraligera para profesionales;799.99;999.99;10
+ABC365;Electronica;Bodega1;Televisor LG 55";Televisor 4K Ultra HD;499.99;799.99;8
+ABC289;Electronica;Bodega2;Auriculares Sony WH-1000XM4;Auriculares con cancelación de ruido;199.99;299.99;25
+ABC937;Electronica;Bodega3;Tablet iPad Air;Tablet para entretenimiento y productividad;399.99;599.99;12
+ABC562;Electronica;Bodega1;Cámara Canon EOS R5;Cámara profesional sin espejo;2499.99;2999.99;5
+ABC478;Electronica;Bodega2;Smartwatch Garmin Fenix 6;Reloj inteligente resistente;349.99;549.99;30
+ABC684;Electronica;Bodega3;Bocina JBL Flip 5;Bocina portátil resistente al agua;99.99;149.99;50
+ABC901;Electronica;Bodega1;Router TP-Link Archer;Router WiFi de alta velocidad;49.99;89.99;100
+ABC213;Ropa;Bodega2;Camiseta Nike;Camiseta deportiva de algodón;9.99;19.99;200
+ABC356;Ropa;Bodega3;Pantalón Levi's;Pantalón de mezclilla;29.99;49.99;150
+ABC647;Ropa;Bodega1;Sudadera Adidas;Sudadera con capucha;39.99;69.99;80
+ABC302;Ropa;Bodega2;Vestido Zara;Vestido casual;19.99;39.99;120
+ABC198;Ropa;Bodega3;Chaqueta North Face;Chaqueta resistente al frío;99.99;159.99;40
+ABC854;Ropa;Bodega1;Zapatos Nike Air Max;Zapatos deportivos;59.99;89.99;60
+ABC329;Ropa;Bodega2;Sombrero Vans;Sombrero estilo urbano;9.99;19.99;90
+ABC493;Ropa;Bodega3;Bufanda Calvin Klein;Bufanda de lana;19.99;29.99;70
+ABC732;Ropa;Bodega1;Gorra Puma;Gorra deportiva;14.99;24.99;100
+ABC605;Ropa;Bodega2;Calcetines Adidas;Calcetines de algodón;4.99;9.99;300
+ABC172;Hogar;Bodega1;Mesa IKEA;Mesa de comedor de madera;99.99;149.99;20
+ABC684;Hogar;Bodega2;Silla IKEA;Silla ergonómica;49.99;79.99;50
+ABC329;Hogar;Bodega3;Lámpara Philips;Lámpara de escritorio LED;19.99;29.99;80
+ABC827;Hogar;Bodega1;Cafetera Nespresso;Cafetera espresso;99.99;129.99;30
+ABC403;Hogar;Bodega2;Microondas Samsung;Microondas con grill;59.99;99.99;25
+ABC501;Hogar;Bodega3;Refrigerador LG;Refrigerador con congelador;499.99;799.99;10
+ABC297;Hogar;Bodega1;Aspiradora Dyson;Aspiradora inalámbrica;299.99;399.99;15
+ABC734;Hogar;Bodega2;Plancha Philips;Plancha de vapor;29.99;49.99;40
+ABC512;Hogar;Bodega3;Tostadora Oster;Tostadora de 4 panes;19.99;29.99;60
+ABC628;Hogar;Bodega1;Ventilador Honeywell;Ventilador de torre;39.99;59.99;100
+ABC741;Ferreteria;Bodega2;Taladro Bosch;Taladro inalámbrico;49.99;79.99;25
+ABC198;Ferreteria;Bodega3;Caja de herramientas Stanley;Caja con compartimentos;19.99;29.99;50
+ABC574;Ferreteria;Bodega1;Escalera plegable;Escalera de aluminio;29.99;49.99;30
+ABC823;Ferreteria;Bodega2;Sierra circular Dewalt;Sierra eléctrica;99.99;149.99;15
+ABC315;Ferreteria;Bodega3;Cinta métrica Stanley;Cinta de 5 metros;4.99;9.99;100
+ABC473;Ferreteria;Bodega1;Llave ajustable Craftsman;Llave multiusos;9.99;14.99;40
+ABC268;Ferreteria;Bodega2;Juego de destornilladores;Juego de precisión;14.99;24.99;35
+ABC931;Ferreteria;Bodega3;Martillo Stanley;Martillo de carpintero;9.99;19.99;60
+ABC690;Ferreteria;Bodega1;Soldadora Lincoln;Soldadora portátil;299.99;399.99;5
+ABC487;Ferreteria;Bodega2;Tijeras de podar Fiskars;Tijeras para jardinería;19.99;29.99;45
+ABC510;Libros;Bodega3;El Quijote;Clásico de la literatura española;9.99;14.99;100
+ABC374;Libros;Bodega1;Orgullo y Prejuicio;Novela romántica de Jane Austen;7.99;12.99;80
+ABC689;Libros;Bodega2;1984;Distopía de George Orwell;6.99;10.99;120
+ABC275;Libros;Bodega3;Matar a un ruiseñor;Novela sobre justicia y raza;8.99;13.99;90
+ABC936;Libros;Bodega1;La Odisea;Poema épico de Homero;11.99;16.99;70
+ABC150;Libros;Bodega2;Hamlet;Obra de teatro de Shakespeare;6.99;11.99;60
+ABC827;Libros;Bodega3;Cien años de soledad;Novela de Gabriel García Márquez;9.99;14.99;50
+ABC451;Libros;Bodega1;El Principito;Novela infantil;5.99;9.99;200
+ABC382;Libros;Bodega2;Rayuela;Novela de Julio Cortázar;10.99;15.99;30
+ABC619;Libros;Bodega3;Don Quijote;Edición completa;14.99;19.99;4
