@@ -23,7 +23,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        Logica_articulos Articulos;
+        Logica_articulos Articulos = null;
 
                 //  DECLARACION DE VARIABLES LOCALES DEL MAIN
 
@@ -98,25 +98,115 @@ public class Main {
 
                         switch (opcion_sub) {
                             case 1:
+
+                                // IMPRIMIMOS EL ENCABEZADO DE LA TABLA DE LOS ARTICULOS
+
                                 System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
                                         "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
                                 System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 
+                                /* ESTE BLOQUE DE CODIGO CONSISTE EN SOLICITAR LA LECTURA*/
 
+                                try {
+                                    Articulos.resetReader();
+                                    while (Articulos.leer() != null){
 
+                                        if (Articulos.getCategoria().equalsIgnoreCase("Electronica")){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                                    Articulos.getCodigo(), Articulos.getCategoria(), Articulos.getUbicacion(),Articulos.getNombre(),
+                                                    Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
+                                        }
+                                    }
 
-                                break;
+                                    break;
+                                }catch (Exception e){
+                                    System.out.println(e);
+                                }
 
                             case 2:
+                                System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                        "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+                                try {
+                                    Articulos.resetReader();
+                                    while (Articulos.leer() != null){
+
+                                        if (Articulos.getCategoria().equalsIgnoreCase("Ropa")){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                                    Articulos.getCodigo(), Articulos.getCategoria(), Articulos.getUbicacion(),Articulos.getNombre(),
+                                                    Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
+                                        }
+                                    }
+
+
+
+                                }catch (Exception e){
+                                    System.out.println(e);
+                                }
+
                                 break;
 
                             case 3:
+                                System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                        "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+                                try {
+                                    Articulos.resetReader();
+                                    while (Articulos.leer() != null){
+
+                                        if (Articulos.getCategoria().equalsIgnoreCase("Hogar")){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                                    Articulos.getCodigo(), Articulos.getCategoria(), Articulos.getUbicacion(),Articulos.getNombre(),
+                                                    Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
+                                        }
+                                    }
+
+                                }catch (Exception e){
+                                    System.out.println(e);
+                                }
+
                                 break;
 
                             case 4:
+                                System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                        "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+                                try {
+                                    Articulos.resetReader();
+                                    while (Articulos.leer() != null){
+
+                                        if (Articulos.getCategoria().equalsIgnoreCase("Ferreteria")){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                                    Articulos.getCodigo(), Articulos.getCategoria(), Articulos.getUbicacion(),Articulos.getNombre(),
+                                                    Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
+                                        }
+                                    }
+
+                                }catch (Exception e){
+                                    System.out.println(e);
+                                }
+
                                 break;
 
                             case 5:
+                                System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                        "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+
+                                try {
+                                    Articulos.resetReader();
+                                    while (Articulos.leer() != null){
+
+                                        if (Articulos.getCategoria().equalsIgnoreCase("Libros")){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n",
+                                                    Articulos.getCodigo(), Articulos.getCategoria(), Articulos.getUbicacion(),Articulos.getNombre(),
+                                                    Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
+                                        }
+                                    }
+
+                                }catch (Exception e){
+                                    System.out.println(e);
+                                }
 
                                 break;
 
@@ -134,7 +224,7 @@ public class Main {
 
                     break;
 
-                case 2:
+                case 2:         //      <------ REGISTRO DE ARTICULOS ------>
 
                     break;
 

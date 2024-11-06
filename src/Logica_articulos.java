@@ -54,8 +54,8 @@ public class Logica_articulos {
         }
 
         if (linea != null) {
-            String[] campos = linea.split(separa);      // separamos los campos escritos del archivo por medio de una coma ( , )
-            if (campos.length == 7) {           // Condicion para porder almacenar los campos en los atributos de la clase.
+            String[] campos = linea.split(separa);      // separamos los campos escritos del archivo por medio de un punto y coma  -> ; <-
+            if (campos.length == 8) {                   // Condicion para porder almacenar los campos en los atributos de la clase.
                 codigo = campos[0];
                 categoria = campos[1];
                 ubicacion = campos[2];
@@ -67,25 +67,32 @@ public class Logica_articulos {
             } else {
                 throw new Exception("Solo estamos considerando 8 campos para un articulo");
             }
-        }else {
-            System.out.println("no hay elemento del articulos en el .txt");
         }
         return linea;
 
     }
 
-    public String Mostrar_Articulos_Electronica() throws Exception {
-        leer();
+//    public boolean Mostrar_Articulos_Electronica() throws Exception {
+//        leer();
+//
+//        if (linea == null) {
+//            throw new Exception("No hay mas articulos disponibles");
+//        }
+//        if (categoria.equalsIgnoreCase("Electronica")) {
+//            return true;
+//        }
+//        return false;
+//    }
 
-        if (linea == null) {
-            throw new Exception("No hay mas articulos disponibles");
-        }
-        if (categoria.equalsIgnoreCase("Electronica")) {
 
+    public void resetReader() throws Exception {
+        try {
+            fr = new FileReader(Nombre_Archivo);  // Reabre el archivo
+            br = new BufferedReader(fr);
+        } catch (FileNotFoundException e) {
+            throw new Exception("No se puede volver a abrir el archivo.");
         }
-        return null;
     }
-
 
 
     public void cerrar() throws Exception {
