@@ -47,4 +47,5 @@ ABC481;Electronica;Bodega1;Cámara de Seguridad;Cámara para vigilancia;89.99;13
 ABC734;Ropa;Bodega2;Gorra;Gorra de deporte;9.99;14.99;40
 ABC859;Hogar;Bodega3;Aire Acondicionado;Aire acondicionado portátil;199.99;349.99;7
 ABC547;Ferreteria;Bodega1;Pico de Acero;Pico de acero para jardín;16.99;24.99;25
-ABC628;Libros;Bodega2;Los Miserables;Clásico de Victor Hugo;12.99;18.99;20
+ABC628;Libros;Bodega2;Los Miserables;Clásico de Victor Hugo;12.99;18.99;20ABC909;ropa;bodega1;ASd;das;23.0;32.0;22
+ABC703;Ferreteria;bodega3;Perno;Se atornilla;0.5;0.5;100
