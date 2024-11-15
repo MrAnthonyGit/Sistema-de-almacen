@@ -445,10 +445,6 @@ public class Main {
 
                     }
 
-                        /*
-                        *       SOLUCIONAR ERROR A LA HORA DE CONSULTAR LOS NUEVOS ARTICULOS
-                        * */
-
 
 
 
