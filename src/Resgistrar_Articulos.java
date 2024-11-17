@@ -69,7 +69,7 @@ public class Resgistrar_Articulos {
             pr.println("");     // pasamos el cursor a la siguiente linea
             // se escriben todos los datos del articulos en el arcjivo
             pr.print(codigo + ";");
-            pr.print(categoria + ";");
+            pr.print(categoria+ ";");
             pr.print(ubicacion + ";");
             pr.print(nombre + ";");
             pr.print(descripcion + ";");

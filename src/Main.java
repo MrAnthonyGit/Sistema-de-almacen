@@ -445,12 +445,13 @@ public class Main {
 
                     }
 
-
-
-
                     break;   // Fin del caso2 del switch de registrar articulos
 
-                case 3:
+                case 3:         // Caso de Busqueda de articulo
+
+                    System.out.println("Ha seleccionado la seccion de Busqueda de articulos");
+
+                    System.out.println("\n\n asd");
 
                     break;
 
