@@ -25,12 +25,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Logica_articulos Articulos = null;
-        Resgistrar_Articulos RegistArt = null;
+        Resgistrar_Articulos Regist_Art = null;
+        Busqueda_Articulos Busqueda_Art = null;
 
                 //  DECLARACION DE VARIABLES LOCALES DEL MAIN
 
         int opcion = 0, cantidadArticulos = 0;
 
+        String codigo;
         String categoria = "";
         int ubicacion = 0;
         String nombre = "";
@@ -41,6 +43,7 @@ public class Main {
 
         try {
             Articulos = new Logica_articulos("Articulos.txt");
+            Busqueda_Art = new Busqueda_Articulos("Articulos.txt");
         }catch (Exception e){
             System.out.println(e);
         }
@@ -127,6 +130,7 @@ public class Main {
                                                     Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
                                         }
                                     }
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 
                                     break;
                                 }catch (Exception e){
@@ -147,7 +151,7 @@ public class Main {
                                                     Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
                                         }
                                     }
-
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 
 
                                 }catch (Exception e){
@@ -170,6 +174,7 @@ public class Main {
                                                     Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
                                         }
                                     }
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 
                                 }catch (Exception e){
                                     System.out.println(e);
@@ -191,7 +196,7 @@ public class Main {
                                                     Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
                                         }
                                     }
-
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------");
                                 }catch (Exception e){
                                     System.out.println(e);
                                 }
@@ -213,6 +218,7 @@ public class Main {
                                                     Articulos.getDescripcion(), Articulos.getCosto(), Articulos.getPrecio(), Articulos.getStock());
                                         }
                                     }
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 
                                 }catch (Exception e){
                                     System.out.println(e);
@@ -268,7 +274,7 @@ public class Main {
                     for (int i = 1 ; i <= cantidadArticulos; i++) {
                                     // ABRIMOS EL ARCHIVO PARA REGISTRAR LOS ARTICULOS
                         try {
-                            RegistArt = new Resgistrar_Articulos("Articulos.txt");
+                            Regist_Art = new Resgistrar_Articulos("Articulos.txt");
                         }catch (Exception e){
                             System.out.println(e);
                         }
@@ -286,7 +292,7 @@ public class Main {
                                 continue;
                             }
 
-                            if (RegistArt.validar_categoria(categoria)) {       // LLamamos al metodo para validar la categoria
+                            if (Regist_Art.validar_categoria(categoria)) {       // LLamamos al metodo para validar la categoria
                                 scanner.nextLine(); // Limpiar el buffer después de nextLine()
                                 break;  // Salir del bucle while si la categoría es válida
                             } else {
@@ -308,7 +314,7 @@ public class Main {
                             }
 
 
-                            if (RegistArt.validar_bodega(ubicacion)) {       // LLamamos al metodo para validar la bodega
+                            if (Regist_Art.validar_bodega(ubicacion)) {       // LLamamos al metodo para validar la bodega
                                 scanner.nextLine(); // Limpiar el buffer después de nextInt()
                                 break;  // Salir del bucle while si la ubicacion de la bodega es válida
                             } else {
@@ -423,21 +429,21 @@ public class Main {
 
                                 // LLamamos al metodo Asignar() para dale valor a los atributos de la clase para
                                 // posteriormente registrarlos en el archivo llamado Articulos.txt
-                        RegistArt.Asignar(categoria, ubicacion, nombre, descripcion, costo, precio, stock);
+                        Regist_Art.Asignar(categoria, ubicacion, nombre, descripcion, costo, precio, stock);
 
                         // Se mandan a registrar el articulos junto sus datos en el archivo
                         try{
-                            RegistArt.Registrar_Articulo();
+                            Regist_Art.Registrar_Articulo();
                             System.out.println("\t\t\n\nARTICULO REGISTRADO CON EXITO!\n");
                             System.out.println("\nArtículo registrado:");
                             System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n", "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
                             System.out.println("---------------------------------------------------------------------------------------------------------------------------");
                             System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10.2f %-10.2f %-10d%n",
-                                    RegistArt.getCodigo(), RegistArt.getCategoria(), RegistArt.getUbicacion(), RegistArt.getNombre(),
-                                    RegistArt.getDescripcion(), RegistArt.getCosto(), RegistArt.getPrecio(), RegistArt.getStock());
-                            System.out.println("");
+                                    Regist_Art.getCodigo(), Regist_Art.getCategoria(), Regist_Art.getUbicacion(), Regist_Art.getNombre(),
+                                    Regist_Art.getDescripcion(), Regist_Art.getCosto(), Regist_Art.getPrecio(), Regist_Art.getStock());
+                            System.out.println("---------------------------------------------------------------------------------------------------------------------------\n");
 
-                            RegistArt.cerrar();
+                            Regist_Art.cerrar();
 
                         } catch (Exception e) {
                             System.out.println("Error en la seguridad del archivo, verifique que pueda ser modificado... " + e);
@@ -451,7 +457,56 @@ public class Main {
 
                     System.out.println("Ha seleccionado la seccion de Busqueda de articulos");
 
-                    System.out.println("\n\n asd");
+                    System.out.println("\n\n Búsqueda de un artículo en particular, por Código, nombre o descripción.");
+
+                    int opBusqueda = 0;
+                    do {
+                        System.out.println("1. Codigo");
+                        System.out.println("2. Nombres");
+                        System.out.println("3. Descripcion");
+                        System.out.println("0. Salir");
+
+                        try{
+                            opBusqueda = scanner.nextInt();
+                        }catch (InputMismatchException e){
+                            System.out.println("Error, intente digitar una de las opciones, Err.Coe: " + e);
+                        }
+
+                        switch (opBusqueda){
+                            case 1:
+                                // CODIGO
+                                while (true) {
+                                    scanner.nextLine(); //limpiando el buffer
+                                    System.out.println("Digite el codigo del articulo a buscar");
+                                    System.out.print("Codigo: ");
+                                    try {
+                                        codigo = scanner.nextLine();
+                                        if (Busqueda_Art.busqueda(codigo) != false){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n", "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10.2f %-10.2f %-10d%n",
+                                                    Busqueda_Art.getCodigo(), Busqueda_Art.getCategoria(), Busqueda_Art.getUbicacion(), Busqueda_Art.getNombre(),
+                                                    Busqueda_Art.getDescripcion(), Busqueda_Art.getCosto(), Busqueda_Art.getPrecio(), Busqueda_Art.getStock());
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------\n");
+                                        }else {
+                                            System.out.println("No se ha podido encontrar el articulo");
+                                            break;          // saliendo del bucle while si no encuentra el articulo
+                                        }
+                                        // aqui van los llamaodos a los metodos
+                                    } catch (Exception e) {
+                                        System.out.println("ERROR. intente otra vez... ErrCode: " + e);
+                                    }
+                                    break;
+                                }
+
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
+
+                    }while (opBusqueda != 0);
 
                     break;
 

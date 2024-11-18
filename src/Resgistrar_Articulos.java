@@ -58,14 +58,7 @@ public class Resgistrar_Articulos {
 
         try {
             // Aqui se mandan a escribir en el archivo.txt el articulo con sus datos
-//            pr.println(codigo + ";"
-//                        + categoria + ";"
-//                        + ubicacion + ";"
-//                        + nombre + ";"
-//                        + descripcion + ";"
-//                        + costo + ";"
-//                        + precio + ";"
-//                        + stock);
+
             pr.println("");     // pasamos el cursor a la siguiente linea
             // se escriben todos los datos del articulos en el arcjivo
             pr.print(codigo + ";");
