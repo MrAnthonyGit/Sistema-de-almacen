@@ -453,7 +453,9 @@ public class Main {
 
                     break;   // Fin del caso2 del switch de registrar articulos
 
-                case 3:         // Caso de Busqueda de articulo
+
+
+                case 3:                     // Caso de Busqueda de articulo
 
                     System.out.println("Ha seleccionado la seccion de Busqueda de articulos");
 
@@ -461,6 +463,7 @@ public class Main {
 
                     int opBusqueda = 0;
                     do {
+                        System.out.println("\nDesea buscar algun articulo en especifico?");
                         System.out.println("1. Codigo");
                         System.out.println("2. Nombres");
                         System.out.println("3. Descripcion");
@@ -474,13 +477,21 @@ public class Main {
 
                         switch (opBusqueda){
                             case 1:
-                                // CODIGO
+
+                                                            //BUSQUEDA POR CODIGO
+
                                 while (true) {
                                     scanner.nextLine(); //limpiando el buffer
-                                    System.out.println("Digite el codigo del articulo a buscar");
+                                    System.out.println("\nDigite el codigo del articulo a buscar");
                                     System.out.print("Codigo: ");
                                     try {
                                         codigo = scanner.nextLine();
+
+                                        if (codigo.trim().isEmpty()){       // Validamos si la entrada esta vacia
+                                            System.out.println("ERROR: El código no puede estar vacío. Intente nuevamente.");
+                                            continue; // Salta a la siguiente iteración del bucle
+                                        }
+
                                         if (Busqueda_Art.busqueda(codigo) != false){
                                             System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n", "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
                                             System.out.println("---------------------------------------------------------------------------------------------------------------------------");
@@ -501,8 +512,74 @@ public class Main {
 
                                 break;
                             case 2:
+
+                                                        // BUSQUEDA POR NOMBRE
+
+                                while (true) {
+                                    scanner.nextLine(); //limpiando el buffer
+                                    System.out.println("\nIngrese el nombre del articulo a buscar");
+                                    System.out.print("Nombre: ");
+                                    try {
+                                        nombre = scanner.nextLine();
+
+                                        if (nombre.trim().isEmpty()){       // Validamos si la entrada esta vacia
+                                            System.out.println("ERROR: El nombre no puede estar vacío. Intente nuevamente.");
+                                            continue; // Salta a la siguiente iteración del bucle
+                                        }
+
+                                        if (Busqueda_Art.busqueda(nombre) != false){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n", "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10.2f %-10.2f %-10d%n",
+                                                    Busqueda_Art.getCodigo(), Busqueda_Art.getCategoria(), Busqueda_Art.getUbicacion(), Busqueda_Art.getNombre(),
+                                                    Busqueda_Art.getDescripcion(), Busqueda_Art.getCosto(), Busqueda_Art.getPrecio(), Busqueda_Art.getStock());
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------\n");
+                                        }else {
+                                            System.out.println("No se ha podido encontrar el articulo");
+                                            break;          // saliendo del bucle while si no encuentra el articulo
+                                        }
+                                        // aqui van los llamaodos a los metodos
+                                    } catch (Exception e) {
+                                        System.out.println("ERROR. intente otra vez... ErrCode: " + e);
+                                    }
+                                    break;
+                                }
+
                                 break;
                             case 3:
+
+                                                            // BUSQUEDA POR DESCRIPCION
+
+                                while (true) {
+                                    scanner.nextLine(); //limpiando el buffer
+                                    System.out.println("\nIngrese la descripcion del articulo a buscar");
+                                    System.out.print("Descripcion: ");
+                                    try {
+                                        descripcion = scanner.nextLine();
+
+                                        if (descripcion.trim().isEmpty()){       // Validamos si la entrada esta vacia
+                                            System.out.println("ERROR: El código no puede estar vacío. Intente nuevamente.");
+                                            continue; // Salta a la siguiente iteración del bucle
+                                        }
+
+                                        if (Busqueda_Art.busqueda(descripcion) != false){
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10s %-10s %-10s%n", "Codigo", "Categoria", "Ubicacion", "Nombre", "Descripcion", "Costo", "Precio", "Stock");
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------");
+                                            System.out.printf("%-10s %-15s %-15s %-20s %-30s %-10.2f %-10.2f %-10d%n",
+                                                    Busqueda_Art.getCodigo(), Busqueda_Art.getCategoria(), Busqueda_Art.getUbicacion(), Busqueda_Art.getNombre(),
+                                                    Busqueda_Art.getDescripcion(), Busqueda_Art.getCosto(), Busqueda_Art.getPrecio(), Busqueda_Art.getStock());
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------\n");
+                                        }else {
+                                            System.out.println("No se ha podido encontrar el articulo");
+                                            break;          // saliendo del bucle while si no encuentra el articulo
+                                        }
+                                        // aqui van los llamaodos a los metodos
+                                    } catch (Exception e) {
+                                        System.out.println("ERROR. intente otra vez... ErrCode: " + e);
+                                    }
+                                    break;
+                                }
+
                                 break;
                         }
 

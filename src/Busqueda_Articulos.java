@@ -38,7 +38,7 @@ public class Busqueda_Articulos {
     }
 
     public boolean busqueda(String Codigo_Nombre_Descrpcion) throws Exception{
-        new Busqueda_Articulos("Articulos.txt");
+        reabrir_Archivo();
         while((linea = br.readLine()) != null){         // PENDIENTE CORREGIR PUNTERO
 
             if (linea.trim().isEmpty()) {       //Validamos si hay lineas vacias
@@ -70,6 +70,14 @@ public class Busqueda_Articulos {
         stock = Integer.parseInt(data[7]);
     }
 
+    public void reabrir_Archivo() throws Exception {
+        try {
+            fr = new FileReader(Nombre_Archivo);  // Reabre el archivo
+            br = new BufferedReader(fr);
+        } catch (FileNotFoundException e) {
+            throw new Exception("No se puede volver a encontrar el archivo.");
+        }
+    }
 
     public String getCodigo() {
         return codigo;
