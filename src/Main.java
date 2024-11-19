@@ -27,6 +27,7 @@ public class Main {
         Logica_articulos Articulos = null;
         Resgistrar_Articulos Regist_Art = null;
         Busqueda_Articulos Busqueda_Art = null;
+        Stocks_Articulos Stock_Articulos = null;
 
                 //  DECLARACION DE VARIABLES LOCALES DEL MAIN
 
@@ -44,6 +45,7 @@ public class Main {
         try {
             Articulos = new Logica_articulos("Articulos.txt");
             Busqueda_Art = new Busqueda_Articulos("Articulos.txt");
+            Stock_Articulos = new Stocks_Articulos("Articulos.txt");
         }catch (Exception e){
             System.out.println(e);
         }
