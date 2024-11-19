@@ -97,6 +97,8 @@ public class Logica_articulos {
         Random random = new Random();
         return random.nextInt(max - min + 1) + min;
     }
+
+
     // Verifica si existe el codigo generado con los que ya estan registrados.
     private boolean verificar_Codigo_Unico(String codigo) throws IOException {
         try {
@@ -127,7 +129,7 @@ public class Logica_articulos {
     }
 
 
-    public void cerrarBr() throws Exception {
+    public void cerrar() throws Exception {
         try {
             br.close();
         }catch (IOException y){throw y;}

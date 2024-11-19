@@ -27,7 +27,7 @@ public class Main {
         Logica_articulos Articulos = null;
         Resgistrar_Articulos Regist_Art = null;
         Busqueda_Articulos Busqueda_Art = null;
-        Stocks_Articulos Stock_Articulos = null;
+        Stocks_Articulos Stocks = null;
 
                 //  DECLARACION DE VARIABLES LOCALES DEL MAIN
 
@@ -45,7 +45,7 @@ public class Main {
         try {
             Articulos = new Logica_articulos("Articulos.txt");
             Busqueda_Art = new Busqueda_Articulos("Articulos.txt");
-            Stock_Articulos = new Stocks_Articulos("Articulos.txt");
+            Stocks = new Stocks_Articulos("Articulos.txt");
         }catch (Exception e){
             System.out.println(e);
         }
@@ -238,7 +238,11 @@ public class Main {
 
                     }while(opcion_sub != 0);
 
-
+                    try {
+                        Articulos.cerrar();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
 
                     break;
 
@@ -453,8 +457,14 @@ public class Main {
 
                     }
 
-                    break;   // Fin del caso2 del switch de registrar articulos
+                    try {
+                        Regist_Art.cerrar();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
 
+
+                    break;   // Fin del caso2 del switch de registrar articulos
 
 
                 case 3:                     // Caso de Busqueda de articulo
@@ -587,11 +597,162 @@ public class Main {
 
                     }while (opBusqueda != 0);
 
+                    try {
+                        Busqueda_Art.cerrar();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+
                     break;
 
-                case 4:
+                case 4:                 // STOCKS DE ARTICULOS
+
+                    do {
+                        System.out.println("\nBuscar Stocks de Categorías");
+                        System.out.println("1. Electrónica");
+                        System.out.println("2. Ropa");
+                        System.out.println("3. Hogar");
+                        System.out.println("4. Ferretería");
+                        System.out.println("5. Libros");
+                        System.out.println("0. Atrás");
+                        System.out.print("Selecciona una opción: ");
+
+                        try {
+                            opcion_sub = scanner.nextInt();
+                        } catch (Exception e) {
+                            System.out.println("\nEntrada inválida. Se esperaba un número");
+                            opcion_sub = -1; // Colocamos un valor default
+                            scanner.next(); // Limpiar entrada
+                            continue;
+                        }
+
+                        switch (opcion_sub) {
+                            case 1:
+                                System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                        "Codigo", "Categoria", "Nombre", "Stock");
+                                System.out.println("---------------------------------------------------------------------------");
+
+                                try {
+                                    Stocks.reabrir_Archivo();
+                                    while (Stocks.busqueda_Stock() != null) {
+                                        if (Stocks.getCategoria().equalsIgnoreCase("Electronica")) {
+                                            System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                                    Stocks.getCodigo(), Stocks.getCategoria(),
+                                                    Stocks.getNombre(), Stocks.getStock());
+                                        }
+                                    }
+                                    System.out.println("---------------------------------------------------------------------------");
+
+                                } catch (Exception e) {
+                                    System.out.println("\nError al buscar el stock: " + e.getMessage());
+                                }
+                                break;
+                            case 2:
+                                System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                        "Codigo", "Categoria", "Nombre", "Stock");
+                                System.out.println("---------------------------------------------------------------------------");
+
+                                try {
+                                    Stocks.reabrir_Archivo();
+                                    while (Stocks.busqueda_Stock() != null) {
+                                        if (Stocks.getCategoria().equalsIgnoreCase("Ropa")) {
+                                            System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                                    Stocks.getCodigo(), Stocks.getCategoria(),
+                                                    Stocks.getNombre(), Stocks.getStock());
+                                        }
+                                    }
+                                    System.out.println("---------------------------------------------------------------------------");
+
+                                } catch (Exception e) {
+                                    System.out.println("\nError al buscar el stock: " + e.getMessage());
+                                }
+                                break;
+                            case 3:
+                                System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                        "Codigo", "Categoria", "Nombre", "Stock");
+                                System.out.println("---------------------------------------------------------------------------");
+
+                                try {
+                                    Stocks.reabrir_Archivo();
+                                    while (Stocks.busqueda_Stock() != null) {
+                                        if (Stocks.getCategoria().equalsIgnoreCase("Hogar")) {
+                                            System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                                    Stocks.getCodigo(), Stocks.getCategoria(),
+                                                    Stocks.getNombre(), Stocks.getStock());
+                                        }
+                                    }
+                                    System.out.println("---------------------------------------------------------------------------");
+
+                                } catch (Exception e) {
+                                    System.out.println("\nError al buscar el stock: " + e.getMessage());
+                                }
+                                break;
+                            case 4:
+                                System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                        "Codigo", "Categoria", "Nombre", "Stock");
+                                System.out.println("---------------------------------------------------------------------------");
+
+                                try {
+                                    Stocks.reabrir_Archivo();
+                                    while (Stocks.busqueda_Stock() != null) {
+                                        if (Stocks.getCategoria().equalsIgnoreCase("Ferreteria")) {
+                                            System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                                    Stocks.getCodigo(), Stocks.getCategoria(),
+                                                    Stocks.getNombre(), Stocks.getStock());
+                                        }
+                                    }
+                                    System.out.println("---------------------------------------------------------------------------");
+
+                                } catch (Exception e) {
+                                    System.out.println("\nError al buscar el stock: " + e.getMessage());
+                                }
+
+                                try {
+                                    Stocks.cerrar();
+                                } catch (Exception e) {
+                                    throw new RuntimeException(e);
+                                }
+
+                                break;
+
+                            case 5:
+                                System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                        "Codigo", "Categoria", "Nombre", "Stock");
+                                System.out.println("---------------------------------------------------------------------------");
+
+                                try {
+                                    Stocks.reabrir_Archivo();
+                                    while (Stocks.busqueda_Stock() != null) {
+                                        if (Stocks.getCategoria().equalsIgnoreCase("Libros")) {
+                                            System.out.printf("%-15s %-20s %-30s %-10s%n",
+                                                    Stocks.getCodigo(), Stocks.getCategoria(),
+                                                    Stocks.getNombre(), Stocks.getStock());
+                                        }
+                                    }
+                                    System.out.println("---------------------------------------------------------------------------");
+
+                                } catch (Exception e) {
+                                    System.out.println("\nError al buscar el stock: " + e.getMessage());
+                                }
+                                break;
+
+                            case 0:
+                                System.out.println("Volviendo al menú principal...");
+                                break;
+
+                            default:
+                                System.out.println("\nOpción no válida. Intenta de nuevo.");
+                        }
+                    } while (opcion_sub != 0);
+
+                    try {
+                        Stocks.cerrar();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
 
                     break;
+
 
                 case 5:
 

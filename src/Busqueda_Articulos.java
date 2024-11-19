@@ -79,6 +79,12 @@ public class Busqueda_Articulos {
         }
     }
 
+    public void cerrar() throws Exception {
+        try {
+            br.close();
+        }catch (IOException y){throw y;}
+    }
+
     public String getCodigo() {
         return codigo;
     }

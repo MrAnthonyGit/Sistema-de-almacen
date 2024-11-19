@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Stocks_Articulos {
     /* el proposito de esta clase es mostrar por categoria todos los productos
@@ -15,6 +16,7 @@ public class Stocks_Articulos {
     private String categoria;
     private String nombre;
     private int stock;
+
     private String linea;
 
     private String Nombre_Archivo;
@@ -34,28 +36,36 @@ public class Stocks_Articulos {
 
     }
 
-    public boolean busqueda(String Codigo_Nombre_Descrpcion) throws Exception{
-        reabrir_Archivo();
-        while((linea = br.readLine()) != null){         // PENDIENTE CORREGIR PUNTERO
+    public String busqueda_Stock() throws Exception{
 
-            if (linea.trim().isEmpty()) {       //Validamos si hay lineas vacias
-                continue;           // Ignorar líneas vacías
-            }
+        final String separa = ";";
 
-            String[] Datos = linea.split(";");
-
-            codigo = Datos[0];
-            nombre = Datos[3];
-            categoria = Datos[4];
-
-            if (codigo.equalsIgnoreCase(Codigo_Nombre_Descrpcion) ||
-                    nombre.equalsIgnoreCase(Codigo_Nombre_Descrpcion) ||
-                    descripcion.equalsIgnoreCase(Codigo_Nombre_Descrpcion)) {
-                leer_Linea(linea);
-                return true;
-            }
+        try {
+            linea = br.readLine();
+        } catch (IOException ex) {
+            throw ex;
         }
-        return false;
+
+        // si no hay más líneas por leer retornamos
+        if (linea == null) {
+            return null;
+        }
+
+        String[] campos = linea.split(separa);  // Separamos los campos por punto y coma (;)
+
+        // Verificación de la cantidad de campos
+        if (campos.length != 8) {
+            throw new Exception("Solo estamos considerando 8 campos para un articulo");
+        }
+
+        // Asignación de valores a los atributos
+        codigo = campos[0];
+        categoria = campos[1];
+        nombre = campos[3];
+        stock = Integer.parseInt(campos[7]);
+
+        return linea;
+
     }
 
     public void reabrir_Archivo() throws Exception {
@@ -67,5 +77,25 @@ public class Stocks_Articulos {
         }
     }
 
+    public void cerrar() throws Exception {
+        try {
+            br.close();
+        }catch (IOException y){throw y;}
+    }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getStock() {
+        return stock;
+    }
 }
