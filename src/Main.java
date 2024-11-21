@@ -64,7 +64,7 @@ public class Main {
             System.out.println("3. Busqueda de articulos");
             System.out.println("4. Stock de articulos");
             System.out.println("5. Consultas de ventas");
-            System.out.println("6. Pedidos");
+            System.out.println("6. Pedidos.txt");
             System.out.println("0. Salir");
             System.out.print("Selecciona una opción: ");
 
@@ -707,12 +707,6 @@ public class Main {
                                     System.out.println("\nError al buscar el stock: " + e.getMessage());
                                 }
 
-                                try {
-                                    Stocks.cerrar();
-                                } catch (Exception e) {
-                                    throw new RuntimeException(e);
-                                }
-
                                 break;
 
                             case 5:
@@ -754,7 +748,8 @@ public class Main {
                     break;
 
 
-                case 5:
+                case 5:             //    CONSULTAR VENTAS
+                    System.out.println("Se ha seleccionado la opcion: consultas de ventas\n");
 
                     break;
 

@@ -1,0 +1,50 @@
+ABC122;iPhone11;Electrónica;5;2799.90
+ABC754;Camiseta Azul;Ropa;15;299.85
+ABC333;Lampara LED;Hogar;6;179.94
+ABC874;Martillo;Ferretería;7;104.93
+ABC212;El Gran Gatsby;Libros;8;103.92
+ABC983;Samsung Galaxy;Electrónica;3;1799.97
+ABC453;Jeans Slim;Ropa;10;299.90
+ABC342;Silla de Oficina;Hogar;4;319.96
+ABC671;Alicates;Ferretería;12;119.88
+ABC814;1984;Libros;5;59.95
+ABC921;Smartwatch;Electrónica;6;899.94
+ABC546;Chaqueta;Ropa;7;279.93
+ABC302;Microondas;Hogar;2;179.98
+ABC634;Destornillador;Ferretería;9;89.91
+ABC125;Don Quijote;Libros;4;59.96
+ABC761;Cámara DSLR;Electrónica;2;1799.98
+ABC836;Zapatos Deportivos;Ropa;8;319.92
+ABC392;Aspiradora;Hogar;3;209.97
+ABC270;Llave Inglesa;Ferretería;10;129.90
+ABC845;El Código Da Vinci;Libros;6;101.94
+ABC214;Televisor 4K;Electrónica;1;799.99
+ABC675;Sudadera;Ropa;5;249.95
+ABC986;Ventilador;Hogar;7;349.93
+ABC529;Cinta Métrica;Ferretería;8;47.92
+ABC271;Matar a un Ruiseñor;Libros;3;32.97
+ABC611;Altavoces Bluetooth;Electrónica;9;629.91
+ABC835;Pantalón Corto;Ropa;6;149.94
+ABC457;Tetera Eléctrica;Hogar;4;139.96
+ABC203;Sierra;Ferretería;5;199.95
+ABC879;Cien Años de Soledad;Libros;3;59.97
+ABC562;Laptop HP;Electrónica;1;999.99
+ABC204;Blusa Floral;Ropa;12;359.88
+ABC572;Planchas;Hogar;2;159.98
+ABC416;Cortadora de césped;Ferretería;3;509.97
+ABC978;La Sombra del Viento;Libros;10;209.90
+ABC586;Auriculares;Electrónica;7;699.93
+ABC240;Falda Larga;Ropa;5;114.95
+ABC891;Planchas;Hogar;4;319.96
+ABC431;Cargador;Ferretería;15;104.85
+ABC659;El Alquimista;Libros;6;53.94
+ABC732;Reproductor MP3;Electrónica;8;239.92
+ABC385;Pantalón Jeans;Ropa;10;269.90
+ABC925;Horno Eléctrico;Hogar;2;339.98
+ABC619;Taladro;Ferretería;4;399.96
+ABC140;El Hobbit;Libros;3;41.97
+ABC481;Cámara de Seguridad;Electrónica;6;839.94
+ABC734;Gorra;Ropa;10;149.90
+ABC859;Aire Acondicionado;Hogar;1;349.99
+ABC547;Pico de Acero;Ferretería;7;174.93
+ABC628;Los Miserables;Libros;9;161.91
