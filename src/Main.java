@@ -30,6 +30,9 @@ public class Main {
         Stocks_Articulos Stocks = null;
         Consultar_Ventas consulta = null;
 
+        // Creamo la insatncia de Gestor de Pedidos con una capacidad máxima de 100 pedidos
+        Gestor_Pedidos gestorPedidos = new Gestor_Pedidos(100);
+
                 //  DECLARACION DE VARIABLES LOCALES DEL MAIN
 
         int opcion = 0, cantidadArticulos = 0;
@@ -48,6 +51,7 @@ public class Main {
             Busqueda_Art = new Busqueda_Articulos("Articulos.txt");
             Stocks = new Stocks_Articulos("Articulos.txt");
             consulta = new Consultar_Ventas();
+            gestorPedidos.cargar_Pedidos_Desde_Archivo("Pedidos.txt");
         }catch (Exception e){
             System.out.println(e);
         }
@@ -66,7 +70,7 @@ public class Main {
             System.out.println("3. Busqueda de articulos");
             System.out.println("4. Stock de articulos");
             System.out.println("5. Consultas de ventas");
-            System.out.println("6. Pedidos.txt");
+            System.out.println("6. Pedidos");
             System.out.println("0. Salir");
             System.out.print("Selecciona una opción: ");
 
@@ -770,11 +774,84 @@ public class Main {
 
                 case 6:
 
+                    do {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            // Trabajo Hecho por un estudiante de Lic. Desarrollo y Gestion de Software cuyo alias es:           Adez0702
+                        System.out.println("\nOpción de Pedidos seleccionada\n");
+                        System.out.println("Seleccione una de las opciones");
+                        System.out.println("1. Consultar todos los pedidos");
+                        System.out.println("2. Buscar pedido por código");
+                        System.out.println("0. Salir");
+                        System.out.print("Seleccione una opción: ");
+
+                        try {
+                            opcion_sub = scanner.nextInt();
+                            scanner.nextLine(); // Limpiar el buffer de entrada
+
+                            // Validar que la opción esté dentro de los valores esperados
+                            if (opcion_sub < 0 || opcion_sub > 2) {
+                                System.out.println("Opción no válida. Por favor, elija una opción entre 0 y 2.");
+                                continue; // Volver al inicio del bucle sin continuar con el switch
+                            }
+
+                        } catch (Exception e) {
+                            System.out.println("Error: Por favor ingrese un número válido.");
+                            scanner.nextLine(); // Limpiar el buffer de entrada para evitar un bucle infinito
+                            opcion_sub = -1;
+                            continue;
+                        }
+
+                        switch (opcion_sub) {
+                            case 1: // OPCION CONSULTAR TODOS LOS PEDIDOS
+                                Pedidos[] pedidos = gestorPedidos.get_Pedidos(); // Cargamos todos los pedidos
+
+                                if (gestorPedidos.get_Total_Pedidos() > 0) {
+                                    System.out.println("\nListado de todos los pedidos:");
+                                    for (int i = 0; i < gestorPedidos.get_Total_Pedidos(); i++) {
+                                        Pedidos pedido = pedidos[i];
+                                        // Imprimir los detalles de cada pedido usando los métodos de acceso con tabulaciones
+                                        System.out.println("\nCódigo: \t" + pedido.getCodigo());
+                                        System.out.println("Artículo: \t" + pedido.getNombreArticulo());
+                                        System.out.println("Cantidad: \t" + pedido.getCantidad());
+                                        System.out.println("Fecha del Pedido: \t" + pedido.getFechaPedido());
+                                        System.out.println("Total a Pagar: \t" + pedido.getTotalPagar());
+                                        System.out.println("-----------------------------");
+                                    }
+                                } else {
+                                    System.out.println("No hay pedidos cargados.");
+                                }
+                                break;
+
+                            case 2: // OPCION CONSULTAR PEDIDO POR CÓDIGO
+                                System.out.print("Ingrese el código del pedido: ");
+                                codigo = scanner.nextLine();
+
+                                // Usar el método buscarPorCodigo y hacerlo insensible al caso
+                                Pedidos pedidoEncontrado = gestorPedidos.buscarPorCodigo(codigo.toUpperCase()); // Convertimos a mayúsculas
+
+                                if (pedidoEncontrado != null) {
+                                    // Si se encuentra el pedido, mostramos sus detalles con tabulaciones
+                                    System.out.println("\nPedido encontrado:");
+                                    System.out.println("Código: \t" + pedidoEncontrado.getCodigo());
+                                    System.out.println("Artículo: \t" + pedidoEncontrado.getNombreArticulo());
+                                    System.out.println("Cantidad: \t" + pedidoEncontrado.getCantidad());
+                                    System.out.println("Fecha del Pedido: \t" + pedidoEncontrado.getFechaPedido());
+                                    System.out.println("Total a Pagar: \t" + pedidoEncontrado.getTotalPagar());
+                                } else {
+                                    // Si no se encuentra el pedido
+                                    System.out.println("No se encontró el pedido con el código ingresado.");
+                                }
+                                break;
+
+                            case 0:
+                                System.out.println("Volviendo al menú principal...");
+                                break;
+                        }
+                    } while (opcion_sub != 0);
+
                     break;
 
                 case 0:                                  // Opcion de salir del programa mas una despedida.
                     System.out.println("\nGracias por usar nuestros servicios");
-                    scanner.close();
+                    scanner.close();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                // hola mundo
                     System.exit(0);  // Cerrar el programa
                     break;
 
