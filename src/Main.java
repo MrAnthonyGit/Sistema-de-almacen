@@ -28,6 +28,7 @@ public class Main {
         Resgistrar_Articulos Regist_Art = null;
         Busqueda_Articulos Busqueda_Art = null;
         Stocks_Articulos Stocks = null;
+        Consultar_Ventas consulta = null;
 
                 //  DECLARACION DE VARIABLES LOCALES DEL MAIN
 
@@ -46,6 +47,7 @@ public class Main {
             Articulos = new Logica_articulos("Articulos.txt");
             Busqueda_Art = new Busqueda_Articulos("Articulos.txt");
             Stocks = new Stocks_Articulos("Articulos.txt");
+            consulta = new Consultar_Ventas();
         }catch (Exception e){
             System.out.println(e);
         }
@@ -751,6 +753,19 @@ public class Main {
                 case 5:             //    CONSULTAR VENTAS
                     System.out.println("Se ha seleccionado la opcion: consultas de ventas\n");
 
+                    consulta.set_Ventas(); // Cargar ventas desde el archivo
+
+                    System.out.printf("%-10s %-20s %-15s %-15s %-15s%n", "Código", "Nombre", "Categoría", "Cantidad", "Monto Total");
+                    System.out.println("----------------------------------------------------------------------------");
+
+                    for (Venta venta : consulta.getVentas()) {
+                        System.out.printf("%-10s %-20s %-15s %-15d %-15.2f%n",
+                                venta.getCodigo(), venta.getNombre(), venta.getCategoria(),
+                                venta.getCantidadVendida(), venta.getMontoTotal());
+                    }
+
+                    System.out.println("----------------------------------------------------------------------------");
+                    System.out.printf("Total General: %.2f%n", consulta.calcularTotalGeneral());
                     break;
 
                 case 6:
