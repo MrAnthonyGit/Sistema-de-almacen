@@ -3,21 +3,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    /*
-    * BIENVENIDO AL PROYECTO FINAL
-    * PROFESOR Giovani A. Sánchez
-    *
-    *          -INTEGRANTES-
-    *   - INTEGRANTE 1
-    *   - INTEGRANTE 2
-    *   - INTEGRANTE 3
-    *   - INTEGRANTE 4 (opcional)
-    *
-    *           -GRUPO
-    *           1SL211 EJEMPLO RECORDAR ELIMINAR    ***********************
-    *
-    * */
-
     public static void main(String[] args) {
 
                 //  INSTANCIAS PARA LAS CLASES
